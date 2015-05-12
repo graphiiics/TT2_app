@@ -1,0 +1,24 @@
+
+<ion-view title={{vm.teamName}} ng-controller="ListaCtrl as vm">
+  <ion-content class="has-header">
+
+
+    <div class="list">
+        <a class="item item-icon-right" ng-repeat="objeto in vm.objetos" ui-sref="app.sl({ id: objeto.id_restaurante })">
+            <div class="row">
+                <div class="col-20">
+                    <p>{{ objeto.restaurante_nombre }}</p>
+                    <p>{{ objeto.id_restaurante }}</p>
+                </div>
+
+                
+
+                
+                
+            </div>
+            
+            <i class="icon ion-chevron-right icon-accessory"></i>
+        </a>
+    </div>
+  </ion-content>
+</ion-view>
