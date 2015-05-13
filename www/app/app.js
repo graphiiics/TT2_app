@@ -40,17 +40,6 @@ angular.module('RestauranteApp', ['ionic', 'menuCtrl', 'perfilCtrl'])
         controller: 'AppCtrl'
     })
 
-    //Este no lo estoy usando [Eliminar]
-    .state('app.profile', {
-        url: '/profile',
-        views: {
-            'menuContent': {
-                templateUrl: 'app/perfil_restaurante/profile.html',
-                controller: 'perfilCtrl'
-            }
-        }
-    })
-
     //Plantilla para el perfil de cada restaurante
     .state('app.perfil', {
       url: '/perfil/:id',
@@ -62,15 +51,6 @@ angular.module('RestauranteApp', ['ionic', 'menuCtrl', 'perfilCtrl'])
         }
     })
 
-    //Elemento para pruebas [Eliminar]
-    .state('app.sl', {
-                  url: '/sl/:id',
-            views: {
-                'menuContent': {
-                    templateUrl: 'app/ejemplo/objeto-ejemplo.html'
-                }
-            }
-        })
 
     //Plantilla para las categorias (Buscar el controlador de los efectos)
     .state('app.categorias', {
@@ -82,23 +62,12 @@ angular.module('RestauranteApp', ['ionic', 'menuCtrl', 'perfilCtrl'])
         }
     })
 
-    //Plantilla de lista de restaurantes por categoria (Cambiar el nombre de la ruta)
-    .state('app.ct', {
-        url: '/ct/:id',
+    //Plantilla de lista de restaurantes por categoria
+    .state('app.categoria', {
+        url: '/categoria/:id',
         views: {
             'menuContent': {
-                templateUrl: 'app/categorias/lista_categoria.html',
-                controller: 'ListaCtrl'
-            }
-        }
-    })
-
-    //Plantilla de pruebas [Eliminar]
-    .state('app.lista', {
-        url: '/lista',
-        views: {
-            'menuContent': {
-                templateUrl: 'app/ejemplo/lista-ejemplo.html'
+                templateUrl: 'app/categorias/lista_categoria.html'
             }
         }
     })
