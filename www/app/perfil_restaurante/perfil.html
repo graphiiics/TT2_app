@@ -2,19 +2,19 @@
     <ion-content ng-class="{expanded:$scope.isExpanded}">
          <!--Menu principal-->
         <div class="tabs tabs-dark tabs-icon-top static">
-            <a ui-sref="app.profile" class="tab-item">
+            <a ui-sref="app.perfil({ id: vm.restaurante.id_restaurante })" class="tab-item">
                 <i class="icon ion-android-restaurant"></i> Perfil
             </a>
-            <a ui-sref="app.profile" class="tab-item">
+            <a ui-sref="app.menu({ id: vm.restaurante.id_restaurante })" class="tab-item">
                 <i class="icon ion-android-map"></i> Menú
             </a>
-            <a ui-sref="app.profile" class="tab-item">
+            <a ui-sref="app.fotos({ id: vm.restaurante.id_restaurante })" class="tab-item">
                 <i class="icon ion-images"></i> Fotos
             </a>
-             <a ui-sref="app.profile" class="tab-item">
+             <a ui-sref="app.promociones({ id: vm.restaurante.id_restaurante })" class="tab-item">
                 <i class="icon ion-pricetags"></i> Promociones
             </a>
-            <a ui-sref="app.profile" class="tab-item">
+            <a ui-sref="app.categorias" class="tab-item">
                 <i class="icon ion-ios-location"></i> Mapa
             </a>
         </div>
@@ -47,9 +47,22 @@
                         <li> <i class="icon ion-clock"></i> Horario: {{vm.restaurante.restaurante_horario}}</li>
                         <li> <i class="ion-ios-telephone"></i> Teléfono: {{ vm.restaurante.restaurante_telefono }} </li>
                         <li> <i class="ion-map"></i> Dirección: {{ vm.restaurante.restaurante_direccion }} </li>
-                        <li> <i class="ion-android-globe"></i> {{ vm.restaurante.restaurante_sitio_web }}</li>
-                        <li> <i class="ion-social-facebook"></i> {{ vm.restaurante.restaurante_url_facebook }} </li>
-                        <li> <i class="ion-social-twitter"></i> {{ vm.restaurante.restaurante_url_twitter }} </li>
+                        <li> 
+                            <!--Implementar una funcion que mande llamar a window.open-->
+                            
+                                <i class="ion-android-globe"></i> {{ vm.restaurante.restaurante_sitio_web }}
+                            
+                        </li>
+                        <li> 
+                            
+                                <i class="ion-social-facebook"></i> {{ vm.restaurante.restaurante_url_facebook }} 
+                           
+                        </li>
+                        <li> 
+                            
+                                <i class="ion-social-twitter"></i> {{ vm.restaurante.restaurante_url_twitter }} 
+                           
+                        </li>
                         <li> <i class="ion-cash"></i> Rango de precio: 
                             <i class="ion-social-usd" ng-repeat="i in getRangoDePrecio() track by $index"> </i>
                         </li>

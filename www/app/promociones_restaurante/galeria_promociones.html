@@ -1,0 +1,52 @@
+<ion-view view-title="Promociones">
+    <ion-content ng-controller="Promociones_Restaurante_Ctrl as vm">
+    <!--Menu principal-->
+        <div class="tabs tabs-dark tabs-icon-top static">
+            <a ui-sref="app.perfil({ id: vm.restaurante_id })" class="tab-item">
+                <i class="icon ion-android-restaurant"></i> Perfil
+            </a>
+            <a ui-sref="app.menu({ id: vm.restaurante_id  })" class="tab-item">
+                <i class="icon ion-android-map"></i> Menú
+            </a>
+            <a ui-sref="app.fotos({ id: vm.restaurante_id  })" class="tab-item">
+                <i class="icon ion-images"></i> Fotos
+            </a>
+             <a ui-sref="app.promociones({ id: vm.restaurante_id  })" class="tab-item">
+                <i class="icon ion-pricetags"></i> Promociones
+            </a>
+            <a ui-sref="app.categorias" class="tab-item">
+                <i class="icon ion-ios-location"></i> Mapa
+            </a>
+        </div>
+
+        <!--Galeria de 1x1
+        <div class="row responsive-md">
+            <div class="col col-25" ng-repeat="image in allImages">
+                <img ng-src="{{image.src}}" ng-click="showImages($index)" width="100%" />
+            </div>
+        </div>
+        -->
+        <!--Imagenes 2x2-->
+
+
+        <div class="row" ng-repeat="image in allImages" ng-if="$index % 2 === 0">
+            <div class="col col-50" ng-if="$index < allImages.length">
+                <img ng-src="{{allImages[$index].src}}" ng-click="visualizarPromo($index)" width="100%" />
+            </div>
+            <div class="col col-50" ng-if="$index + 1 < allImages.length">
+                <img ng-src="{{allImages[$index + 1].src}}" ng-click="visualizarPromo($index)" width="100%" />
+            </div>
+        </div>
+        <hr>
+        <div class="list">
+            <div class="item" ng-repeat="promo in vm.promociones">
+              <a class="item item-avatar"  ui-sref="app.promo({ id: promo.id_promocion })">
+                  <img src="img/mogi.jpg">
+                  <h2>Img: {{promo.promocion_imagen}}</h2>
+                  <p>Fecha: {{promo.promocion_fecha_vigencia }} </p>
+              </a>
+            </div>
+        </div>
+       
+    </ion-content>
+</ion-view>

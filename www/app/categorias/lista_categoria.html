@@ -3,17 +3,17 @@
     <div class="list">
         <div class="item" ng-repeat="restaurante in vm.restaurantes">
           <div class="row">
-            <div class="col col-80">
+            <div class="col col-75">
               <a class="item item-avatar" ui-sref="app.perfil({ id: restaurante.id_restaurante })">
                   <img src="img/mogi.jpg">
                   <h2>{{restaurante.restaurante_nombre}}</h2>
                   <p>Distancia: {{ restaurante.restaurante_calificacion }} km</p>
               </a>
             </div>
-            <div class="col col-10">
-              <h4 class="outline padding balanced inline center img-rounded">
+            <div class="col col-5">
+              <h3 class="outline padding balanced inline center img-rounded">
                     {{ restaurante.restaurante_calificacion }}
-              </h4>
+              </h3>
               <!--button class="button button-fab button-fab-center-right button-balanced waves-effect waves-button waves-light">
                 {{ restaurante.restaurante_calificacion }}
               </button-->

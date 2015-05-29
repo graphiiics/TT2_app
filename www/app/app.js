@@ -71,6 +71,57 @@ angular.module('RestauranteApp', ['ionic', 'menuCtrl', 'perfilCtrl'])
             }
         }
     })
+
+    //Plantilla del apartado de menu del restaurante
+    .state('app.menu', {
+        url: '/menu/:id',
+        views: {
+            'menuContent': {
+                templateUrl: 'app/menu_restaurante/galeria_menu.html'
+            }
+        }
+    })
+
+    //Plantilla del apartado de fotos del restaurante
+    .state('app.fotos', {
+        url: '/fotos/:id',
+        views: {
+            'menuContent': {
+                templateUrl: 'app/fotos_restaurante/galeria_fotos.html'
+            }
+        }
+    })
+
+    //Plantilla del apartado de promociones del restaurante
+    .state('app.promociones', {
+        url: '/promociones/:id',
+        views: {
+            'menuContent': {
+                templateUrl: 'app/promociones_restaurante/galeria_promociones.html'
+            }
+        }
+    })
+
+    //Plantilla para una sola promocion del restaurante
+    .state('app.promocion', {
+        url: '/promocion',
+        views: {
+            'menuContent': {
+                templateUrl: 'app/promociones_restaurante/visor_galeria_promociones.html'
+            }
+        }
+    })
+
+    .state('app.promo', {
+        url: '/promo/:id',
+        views: {
+            'menuContent': {
+                templateUrl: 'app/promociones_restaurante/visor_galeria_promociones.html'
+            }
+        }
+    })
+
+
     ;
 
     //La aplicacion iniciara en esta ruta

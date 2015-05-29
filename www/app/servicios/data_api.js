@@ -46,12 +46,75 @@
         }
 
 
+        function getImagenesMenuRestaurante(id){
+        	var deferred = $q.defer();
 
+        	$http.get("http://localhost:3000/api/imagenes_menu/" + id)
+        		 .success(function(data){
+        		 	deferred.resolve(data);
+        		 	console.log("data restaurantes since $http-->", data);
+        		 })
+        		 .error(function(){
+        		 	console.log("Error while making HTTP call");
+        		 	deferred.reject();
+        		 });
+        		 return deferred.promise;
+        }
+
+        function getFotosRestaurante(id){
+        	var deferred = $q.defer();
+
+        	$http.get("http://localhost:3000/api/fotos_restaurante/" + id)
+        		 .success(function(data){
+        		 	deferred.resolve(data);
+        		 	console.log("data restaurantes since $http-->", data);
+        		 })
+        		 .error(function(){
+        		 	console.log("Error while making HTTP call");
+        		 	deferred.reject();
+        		 });
+        		 return deferred.promise;
+        }
+
+        function getPromocionesRestaurante(id){
+        	var deferred = $q.defer();
+
+        	$http.get("http://localhost:3000/api/promociones/" + id)
+        		 .success(function(data){
+        		 	deferred.resolve(data);
+        		 	console.log("data restaurantes since $http-->", data);
+        		 })
+        		 .error(function(){
+        		 	console.log("Error while making HTTP call");
+        		 	deferred.reject();
+        		 });
+        		 return deferred.promise;
+        }
+
+        function getPromocion(id){
+        	var deferred = $q.defer();
+
+        	$http.get("http://localhost:3000/api/promocion/" + id)
+        		 .success(function(data){
+        		 	deferred.resolve(data);
+        		 	console.log("data restaurantes since $http-->", data);
+        		 })
+        		 .error(function(){
+        		 	console.log("Error while making HTTP call");
+        		 	deferred.reject();
+        		 });
+        		 return deferred.promise;
+        }
 
         return {
             getDB: getDB,
             getRestaurantes: getRestaurantes,
-            getDatosDestacadosRestaurante: getDatosDestacadosRestaurante
+            getDatosDestacadosRestaurante: getDatosDestacadosRestaurante,
+            getImagenesMenuRestaurante: getImagenesMenuRestaurante,
+            getFotosRestaurante: getFotosRestaurante,
+            getPromocionesRestaurante: getPromocionesRestaurante,
+            getPromocion: getPromocion
+
         };
     };
 })();

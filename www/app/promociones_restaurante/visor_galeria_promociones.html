@@ -1,0 +1,76 @@
+<!--ion-modal-view class="modal image-modal transparent" ng-click="closeModal()">
+    <ion-slide-box on-slide-changed="slideChanged(index)" show-pager="true" active-slide="activeSlide">
+        <ion-slide ng-repeat="image in allImages">
+        	<div class="button-bar social-login">
+	            <button class="button button-small button-border icon-left ion-social-twitter button-calm-900">Twitter</button>
+	            <button class="button button-small button-border icon-left ion-social-facebook button-positive-900">Facebook</button>
+	        </div>
+            <img ng-src="{{image.src}}" class="fullscreen-image"/>
+            
+        </ion-slide>
+    </ion-slide-box>
+</ion-modal-view-->
+<!--ion-view view-title="Promocion">
+	 <ion-content ng-controller="Promociones_Restaurante_Ctrl as vm" class="content has-header">
+	    <div class="card">
+	    	
+
+	        	<h4>Fecha de vigencia: 10/04/2015</h4>
+	        	<br>
+
+	            <img ng-src="img/promo_mogi_2.jpg" class="fullscreen-image"/>
+	            <br>	
+				<div class="button-bar ">
+		            <button class="button button-small button-border icon-left ion-social-twitter button-calm-900">Twitter</button>
+		            <button class="button button-small button-border icon-left ion-social-facebook button-positive-900">Facebook</button>
+		        </div>
+
+	    </div>
+	</ion-content>
+</ion-view-->
+
+
+<ion-view view-title="Promociones">
+    <ion-content ng-controller="Promocion_Restaurante_Ctrl as vm">
+    <!--Menu principal-->
+        <div class="tabs tabs-dark tabs-icon-top static">
+            <a ui-sref="app.perfil({ id: vm.restaurante_id })" class="tab-item">
+                <i class="icon ion-android-restaurant"></i> Perfil
+            </a>
+            <a ui-sref="app.menu({ id: vm.restaurante_id  })" class="tab-item">
+                <i class="icon ion-android-map"></i> Menú
+            </a>
+            <a ui-sref="app.fotos({ id: vm.restaurante_id  })" class="tab-item">
+                <i class="icon ion-images"></i> Fotos
+            </a>
+             <a ui-sref="app.promociones({ id: vm.restaurante_id  })" class="tab-item">
+                <i class="icon ion-pricetags"></i> Promociones
+            </a>
+            <a ui-sref="app.categorias" class="tab-item">
+                <i class="icon ion-ios-location"></i> Mapa
+            </a>
+        </div>
+        
+		<div class="card">
+	    	
+
+	        	<h4>Fecha de vigencia: {{vm.promocion[0].promocion_fecha_vigencia }}</h4>
+	        	<br>
+	        	<p>img: {{vm.promocion[0].promocion_imagen }}</p>
+	        	<p>id: {{vm.promocion[0].id_promocion }}</p>
+
+	            <img ng-src="img/promo_mogi_2.jpg" class="fullscreen-image"/>
+	            <br>	
+				<div class="button-bar ">
+		            <button class="button button-small button-border icon-left ion-social-twitter button-calm-900">Twitter</button>
+		            <button class="button button-small button-border icon-left ion-social-facebook button-positive-900">Facebook</button>
+		        </div>
+
+	    </div>
+	 
+       
+       
+    </ion-content>
+</ion-view>
+
+

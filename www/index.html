@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <!--El meta de Content-Security-Policy-->
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src: 'self' 'unsafe-inline' 'unsafe-eval'">
     <title></title>
     <link href='https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic' rel='stylesheet' type='text/css'>
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
@@ -32,6 +34,10 @@
     <script src="app/perfil_restaurante/data_perfil_ctrl.js"></script>
     <script src="app/categorias/data_restaurantes_ctrl.js"></script>
     <script src="app/categorias/lista_ctrl.js"></script>
+    <script src="app/menu_restaurante/data_menu_restaurante.js"></script>
+    <script src="app/fotos_restaurante/data_galeria_fotos.js"></script>
+    <script src="app/promociones_restaurante/data_galeria_promociones.js"></script>
+    <script src="app/promociones_restaurante/data_promocion.js"></script>
 
 </head>
 <body ng-app="RestauranteApp">
