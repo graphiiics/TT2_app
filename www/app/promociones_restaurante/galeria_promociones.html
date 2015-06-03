@@ -40,10 +40,10 @@
         <hr>
         <div class="list">
             <div class="item" ng-repeat="promo in vm.promociones">
-              <a class="item item-avatar"  ui-sref="app.promo({ id: promo.id_promocion })">
+              <a class="item item-avatar"  ui-sref="app.promo({ id: promo.id })">
                   <img src="img/mogi.jpg">
-                  <h2>Img: {{promo.promocion_imagen}}</h2>
-                  <p>Fecha: {{promo.promocion_fecha_vigencia }} </p>
+                  <h2>Img: {{promo.imagen}}</h2>
+                  <p>Fecha: {{promo.fecha_vigencia }} </p>
               </a>
             </div>
         </div>

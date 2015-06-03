@@ -14,6 +14,12 @@
         console.log("Restaurante id-->", restauranteId);
         console.log("vm.restaurante_id  -->", vm.restaurante_id);
 
+        //----------------------------------------------------------------
+        //                      Test de post
+
+        dataApi.setUsuario(restauranteId);
+        //----------------------------------------------------------------
+
 
         dataApi.getFotosRestaurante(restauranteId).then(function(data){
             vm.fotos_restaurante = data.fotos_restaurante;

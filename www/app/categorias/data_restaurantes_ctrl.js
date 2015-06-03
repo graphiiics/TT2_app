@@ -19,8 +19,9 @@
         });
 /**/
         dataApi.getRestaurantes().then(function(data){
-            vm.restaurantes =  _.filter(data.restaurantes, { "restaurante_categoria": idCate });
-            //console.log("vm.mexicana since of $http-->", vm.mexicana );
+            console.log("Entre a la funcion de getRestaurantes()");
+            vm.restaurantes =  _.filter(data.restaurantes, { "categoria": idCate });
+            console.log("vm.restaurantes since of lista Categoria.js-->", vm.restaurantes );
         });
 
     };

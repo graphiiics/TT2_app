@@ -18,7 +18,8 @@
         function getRestaurantes(){
         	var deferred = $q.defer();
 
-        	$http.get("http://localhost:3000/api/restaurantes")
+        	//$http.get("http://localhost/API/public/restaurantes")
+        	$http.get("http://gael.net.mocha7004.mochahost.com/API/public/restaurantes")
         		 .success(function(data){
         		 	deferred.resolve(data);
         		 	console.log("data restaurantes since $http-->", data);
@@ -33,7 +34,8 @@
         function getDatosDestacadosRestaurante(id){
         	var deferred = $q.defer();
 
-        	$http.get("http://localhost:3000/api/datos_destacados/" + id)
+        	//$http.get("http://localhost/API/public/datos_destacados/" + id)
+        	$http.get("http://gael.net.mocha7004.mochahost.com/API/public/datos_destacados/" + id)
         		 .success(function(data){
         		 	deferred.resolve(data);
         		 	console.log("data restaurantes since $http-->", data);
@@ -49,7 +51,8 @@
         function getImagenesMenuRestaurante(id){
         	var deferred = $q.defer();
 
-        	$http.get("http://localhost:3000/api/imagenes_menu/" + id)
+        	//$http.get("http://localhost/API/public/imagenes_menu/" + id)
+        	$http.get("http://gael.net.mocha7004.mochahost.com/API/public/imagenes_menu/" + id)
         		 .success(function(data){
         		 	deferred.resolve(data);
         		 	console.log("data restaurantes since $http-->", data);
@@ -64,7 +67,8 @@
         function getFotosRestaurante(id){
         	var deferred = $q.defer();
 
-        	$http.get("http://localhost:3000/api/fotos_restaurante/" + id)
+        	//$http.get("http://localhost/API/public/fotos_restaurante/" + id)
+        	$http.get("http://gael.net.mocha7004.mochahost.com/API/public/fotos_restaurante/" + id)
         		 .success(function(data){
         		 	deferred.resolve(data);
         		 	console.log("data restaurantes since $http-->", data);
@@ -79,7 +83,8 @@
         function getPromocionesRestaurante(id){
         	var deferred = $q.defer();
 
-        	$http.get("http://localhost:3000/api/promociones/" + id)
+        	//$http.get("http://localhost/API/public/promociones/" + id)
+        	$http.get("http://gael.net.mocha7004.mochahost.com/API/public/promociones/" + id)
         		 .success(function(data){
         		 	deferred.resolve(data);
         		 	console.log("data restaurantes since $http-->", data);
@@ -94,7 +99,8 @@
         function getPromocion(id){
         	var deferred = $q.defer();
 
-        	$http.get("http://localhost:3000/api/promocion/" + id)
+        	//$http.get("http://localhost/API/public/promocion/" + id)
+        	$http.get("http://gael.net.mocha7004.mochahost.com/API/public/promocion/" + id)
         		 .success(function(data){
         		 	deferred.resolve(data);
         		 	console.log("data restaurantes since $http-->", data);
@@ -106,6 +112,24 @@
         		 return deferred.promise;
         }
 
+        function setUsuario(token) {
+
+                    $http.post('http://localhost/API/public/usuario', {
+                    	correo: 'default@unipixel.com',
+                    	token: token,
+                    	tipo: 'android'
+                    }).
+					  success(function(data, status, headers, config) {
+					    // this callback will be called asynchronously
+					    // when the response is available
+					  }).
+					  error(function(data, status, headers, config) {
+					    // called asynchronously if an error occurs
+					    // or server returns response with an error status.
+					  });
+
+                }
+
         return {
             getDB: getDB,
             getRestaurantes: getRestaurantes,
@@ -113,7 +137,8 @@
             getImagenesMenuRestaurante: getImagenesMenuRestaurante,
             getFotosRestaurante: getFotosRestaurante,
             getPromocionesRestaurante: getPromocionesRestaurante,
-            getPromocion: getPromocion
+            getPromocion: getPromocion,
+            setUsuario: setUsuario
 
         };
     };

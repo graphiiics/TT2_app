@@ -18,9 +18,10 @@
         dataApi.getPromocion(promocionId).then(function(data){
             vm.promocion = data.promocion;
             console.log("vm.promocion since of $http-->", vm.promocion );
-            console.log("vm.promocion[0].promocionId since of $http-->", vm.promocion[0].id_promocion );
-            vm.restaurante_id = vm.promocion[0].id_restaurante; 
-            console.log("id_restaurante since of $http-->", vm.promocion[0].id_promocion );
+            console.log("vm.promocion.id since of $http-->", vm.promocion.id_restaurante );
+            //console.log("vm.promocion[0].promocionId since of $http-->", vm.promocion[0].id );
+            vm.restaurante_id = vm.promocion.id_restaurante; 
+            //console.log("id_restaurante since of $http-->", vm.promocion[0].id );
         });
 
 

@@ -7,12 +7,16 @@
         var vm = this;
 
         var rango;
-        var restauranteId = Number($stateParams.id);
+        //var restauranteId = Number($stateParams.id);
+        var restauranteId = $stateParams.id;
+        console.log("El id del restaurante de la url es-->", restauranteId);
 
         dataApi.getRestaurantes().then(function(data){
-            vm.restaurante = _.find(data.restaurantes, { "id_restaurante": restauranteId });
-            rango = vm.restaurante.restaurante_rango_precio;
-            console.log("vm.restaurante since of $http-->", vm.restaurante );
+            console.log("Entre a esta mmda");
+            vm.restaurante = _.find(data.restaurantes, { "id": restauranteId });
+            console.log("*vm.restaurante since of $http-->", vm.restaurante );
+            rango = vm.restaurante.rango_precio;
+           
         });
 
         dataApi.getDatosDestacadosRestaurante(restauranteId).then(function(data){

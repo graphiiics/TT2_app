@@ -8,19 +8,22 @@
     function Menu_Restaurante_Ctrl($stateParams, dataApi, $scope, $ionicModal) {
         var vm = this;
 
+       
+
+
         var restauranteId = Number($stateParams.id);
         vm.restaurante_id = restauranteId; 
 
         console.log("Restaurante id-->", restauranteId);
-        console.log("vm.restaurante_id  -->", vm.restaurante_id);
+        console.log("vm.restaurante_id -->", vm.restaurante_id);
+        
 
 
         dataApi.getImagenesMenuRestaurante(restauranteId).then(function(data){
             vm.imagenes_menu = data.imagenes_menu;
             console.log("vm.imagenes_menu since of $http-->", vm.imagenes_menu );
+            //$scope.allImages = vm.imagenes_menu;
         });
-
-
 
 
         $scope.allImages = [
@@ -33,6 +36,10 @@
             //{ 'src' : 'img/ionic.png' },
             { 'src' : 'img/mogi_menu_7.jpg' }
         ];
+        console.log("allImages-->", $scope.allImages );
+
+        
+
 
         $scope.showImages = function(index) {
             $scope.activeSlide = index;
